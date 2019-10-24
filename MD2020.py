@@ -14,7 +14,7 @@ import subprocess
 # ==================================================================== #
 
 # The report number beeing processed
-report_number = 10
+report_number = 3
 
 # The maximum time a group can take to run their script, in seconds
 # -1 => infini
