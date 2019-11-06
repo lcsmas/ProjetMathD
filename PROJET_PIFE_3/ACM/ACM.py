@@ -1,4 +1,5 @@
 import csv
+import sys
 
 #On attribue arbitrairement des valeurs quantitatives aux notations qualitatives
 eval = {
@@ -30,7 +31,16 @@ eleves = [];
 notes = [];
 groupes = [];
 meilleurs_groupes = []
-csvfile = open('../DONNEES/preferencesIG4MD.csv');
+ext = ''
+
+#Récupère l'argument ext
+for arg in sys.argv:
+    if arg.find("--ext=") != -1:
+        ext = arg[6:]
+if len(ext) != 0 :
+    csvfile = open('../DONNEES/preferences' + ext + '.csv');
+else :
+    csvfile = open('../DONNEES/preferencesIG4MD.csv');
 iterator = csv.reader(csvfile, delimiter=',');
 
 #Construction de la matrice des élèves
